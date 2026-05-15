@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interview Preperation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="brand">Interview Prep</div>
+      <nav class="nav-links">
+        <div class="dropdown">
+          <button class="dropbtn">JavaScript</button>
+          <div class="dropdown-content">
+            <a href="#" data-topic="JavaScript" data-value="questions">Questions</a>
+            <a href="#" data-topic="JavaScript" data-value="practice">Practice</a>
+            <a href="#" data-topic="JavaScript" data-value="resources">Resources</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Angular</button>
+          <div class="dropdown-content">
+            <a href="#" data-topic="Angular" data-value="questions">Questions</a>
+            <a href="#" data-topic="Angular" data-value="components">Components</a>
+            <a href="#" data-topic="Angular" data-value="tutorials">Tutorials</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="content">
+      <div id="displayArea" class="display-area">
+        <p>Select a topic from the navbar to view content.</p>
+      </div>
+
+      <!-- JavaScript Questions -->
+      <div id="js-questions" class="content-section" style="display: none;">
+        <h2>2 Years of Experience - JavaScript Questions</h2>
+        <p>Review these common interview questions for a mid-level JavaScript role.</p>
+        
+        <!-- Scope and Closures Topic -->
+        <div class="topic-section">
+          <h3>Scope and Closures</h3>
+          <ol class="question-list">
+            <li>What is a closure in JavaScript, and provide an example use case?</li>
+            <li>Explain the difference between <code>var</code>, <code>let</code>, and <code>const</code>.</li>
+            <li>How would you explain hoisting in JavaScript?</li>
+          </ol>
+        </div>
+
+        <!-- Prototypes Topic -->
+        <div class="topic-section">
+          <h3>Prototypes and Inheritance</h3>
+          <ol class="question-list">
+            <li>How does prototypal inheritance work in JavaScript?</li>
+            <li>What is the difference between prototype and instance properties?</li>
+          </ol>
+        </div>
+
+        <!-- Asynchronous Programming Topic -->
+        <div class="topic-section">
+          <h3>Asynchronous Programming</h3>
+          <ol class="question-list">
+            <li>What is the event loop and how does it handle asynchronous code?</li>
+            <li>Describe the difference between synchronous and asynchronous functions.</li>
+            <li>What are promises, and how do they compare to async/await?</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- JavaScript Practice -->
+      <div id="js-practice" class="content-section" style="display: none;">
+        <h2>JavaScript Practice Exercises</h2>
+        <p>Hands-on practice to strengthen your JavaScript skills.</p>
+        <ul>
+          <li>Write a function that implements debouncing.</li>
+          <li>Create a promise-based API call wrapper.</li>
+          <li>Build a simple state management system.</li>
+        </ul>
+      </div>
+
+      <!-- JavaScript Resources -->
+      <div id="js-resources" class="content-section" style="display: none;">
+        <h2>JavaScript Learning Resources</h2>
+        <p>Recommended resources for mastering JavaScript.</p>
+        <ul>
+          <li>MDN Web Docs - JavaScript Guide</li>
+          <li>JavaScript.info - Modern JavaScript Tutorial</li>
+          <li>You Don't Know JS - Book Series</li>
+        </ul>
+      </div>
+
+      <!-- Angular Questions -->
+      <div id="ng-questions" class="content-section" style="display: none;">
+        <h2>2 Years of Experience - Angular Questions</h2>
+        <p>Review these common interview questions for Angular developers.</p>
+        
+        <!-- Core Concepts Topic -->
+        <div class="topic-section">
+          <h3>Core Concepts</h3>
+          <ol class="question-list">
+            <li>What is dependency injection and how does Angular implement it?</li>
+            <li>Explain the difference between components and services in Angular.</li>
+          </ol>
+        </div>
+
+        <!-- Change Detection Topic -->
+        <div class="topic-section">
+          <h3>Change Detection</h3>
+          <ol class="question-list">
+            <li>How does change detection work in Angular?</li>
+            <li>What are the different change detection strategies?</li>
+          </ol>
+        </div>
+
+        <!-- Observables and RxJS Topic -->
+        <div class="topic-section">
+          <h3>Observables and RxJS</h3>
+          <ol class="question-list">
+            <li>What are observables and how are they used in Angular?</li>
+            <li>What is the difference between observables and promises?</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Angular Components -->
+      <div id="ng-components" class="content-section" style="display: none;">
+        <h2>Angular Component Architecture</h2>
+        <p>Deep dive into Angular component patterns and best practices.</p>
+        <ul>
+          <li>Component lifecycle hooks</li>
+          <li>Input and output properties</li>
+          <li>Template-driven vs Reactive forms</li>
+        </ul>
+      </div>
+
+      <!-- Angular Tutorials -->
+      <div id="ng-tutorials" class="content-section" style="display: none;">
+        <h2>Angular Tutorials</h2>
+        <p>Step-by-step guides to mastering Angular.</p>
+        <ul>
+          <li>Building your first Angular app</li>
+          <li>HTTP Requests and RxJS</li>
+          <li>Routing and lazy loading</li>
+        </ul>
+      </div>
+    </main>
+
+    <script>
+      const dropdownLinks = document.querySelectorAll('.dropdown-content a');
+
+      dropdownLinks.forEach((link) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          const topic = link.getAttribute('data-topic');
+          const value = link.getAttribute('data-value');
+          
+          // Create proper prefix mapping
+          let prefix;
+          if (topic === 'JavaScript') {
+            prefix = 'js';
+          } else if (topic === 'Angular') {
+            prefix = 'ng';
+          }
+          
+          // Hide all content sections
+          const allSections = document.querySelectorAll('.content-section');
+          allSections.forEach(section => section.style.display = 'none');
+          
+          // Show selected section
+          const sectionId = `${prefix}-${value}`;
+          const selectedSection = document.getElementById(sectionId);
+          if (selectedSection) {
+            selectedSection.style.display = 'block';
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
