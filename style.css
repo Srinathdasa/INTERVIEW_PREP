@@ -50,6 +50,18 @@ body {
   background: rgba(255, 255, 255, 0.15);
 }
 
+.btn-success {
+  background-color: #198754;
+  color: #ffffff;
+  border: 1px solid #198754;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+  background-color: #157347;
+  color: #ffffff;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
