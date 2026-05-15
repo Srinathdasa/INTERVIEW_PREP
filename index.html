@@ -10,6 +10,7 @@
     <header class="navbar">
       <div class="brand">Interview Prep</div>
       <nav class="nav-links">
+        <button id="tipsButton" class="dropbtn">Tips</button>
         <div class="dropdown">
           <button class="dropbtn">JavaScript</button>
           <div class="dropdown-content">
@@ -33,7 +34,14 @@
       <div id="displayArea" class="display-area">
         <p>Select a topic from the navbar to view content</p>
       </div>
-
+      <!-- Tips Content -->
+      <div id="tips-content" class="content-section" style="display: none;">
+        <h2>Tips</h2>
+        <ul>
+          <li>daily mock interview</li>
+          <li>confidental</li>
+        </ul>
+      </div>
       <!-- JavaScript Questions -->
       <div id="js-questions" class="content-section" style="display: none;">
         <h2>2 Years of Experience - JavaScript Questions</h2>
@@ -149,6 +157,12 @@
 
     <script>
       const dropdownLinks = document.querySelectorAll('.dropdown-content a');
+      const tipsButton = document.getElementById('tipsButton');
+
+      function hideAllSections() {
+        const allSections = document.querySelectorAll('.content-section');
+        allSections.forEach(section => section.style.display = 'none');
+      }
 
       dropdownLinks.forEach((link) => {
         link.addEventListener('click', (event) => {
@@ -156,7 +170,6 @@
           const topic = link.getAttribute('data-topic');
           const value = link.getAttribute('data-value');
           
-          // Create proper prefix mapping
           let prefix;
           if (topic === 'JavaScript') {
             prefix = 'js';
@@ -164,11 +177,7 @@
             prefix = 'ng';
           }
           
-          // Hide all content sections
-          const allSections = document.querySelectorAll('.content-section');
-          allSections.forEach(section => section.style.display = 'none');
-          
-          // Show selected section
+          hideAllSections();
           const sectionId = `${prefix}-${value}`;
           const selectedSection = document.getElementById(sectionId);
           if (selectedSection) {
@@ -176,6 +185,16 @@
           }
         });
       });
+
+      if (tipsButton) {
+        tipsButton.addEventListener('click', () => {
+          hideAllSections();
+          const tipsSection = document.getElementById('tips-content');
+          if (tipsSection) {
+            tipsSection.style.display = 'block';
+          }
+        });
+      }
     </script>
   </body>
 </html>
