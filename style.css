@@ -14,9 +14,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
   padding: 16px 24px;
-  background: #1a73e8;
-  color: #ffffff;
+  background: linear-gradient(135deg, #95c1e0 0%, #f3e5f5 100%);
+  color: #202124;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .brand {
@@ -28,7 +31,75 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.nav-links .btn,
+.nav-links .dropbtn {
+  white-space: nowrap;
+  border-radius: 999px;
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.nav-links .btn:hover,
+.nav-links .dropbtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.nav-links .btn {
+  min-width: auto;
+}
+
+.btn-outline-primary.active-nav,
+.btn-outline-primary.active-nav:hover {
+  background-color: #0d6efd;
+  color: #ffffff;
+  border-color: #0d6efd;
+}
+
+.btn-outline-secondary.active-nav,
+.btn-outline-secondary.active-nav:hover {
+  background-color: #6c757d !important;
+  color: #ffffff !important;
+  border-color: #6c757d !important;
+}
+
+.btn-outline-success.active-nav,
+.btn-outline-success.active-nav:hover {
+  background-color: #198754 !important;
+  color: #ffffff !important;
+  border-color: #198754 !important;
+}
+
+.btn-outline-info.active-nav,
+.btn-outline-info.active-nav:hover {
+  background-color: #0dcaf0 !important;
+  color: #ffffff !important;
+  border-color: #0dcaf0 !important;
+}
+
+.btn-outline-danger.active-nav,
+.btn-outline-danger.active-nav:hover {
+  background-color: #dc3545;
+  color: #ffffff;
+  border-color: #dc3545;
+}
+
+.btn-outline-warning.active-nav,
+.btn-outline-warning.active-nav:hover {
+  background-color: #ffc107;
+  color: #ffffff;
+  border-color: #ffc107;
+}
+
+.dropdown-content a.active {
+  background: #e8f0fe;
+  color: #1a73e8;
 }
 
 .dropdown {
@@ -36,9 +107,6 @@ body {
 }
 
 .dropbtn {
-  background: transparent;
-  border: none;
-  color: inherit;
   font-size: 1rem;
   cursor: pointer;
   padding: 10px 14px;
@@ -93,6 +161,43 @@ body {
 
 .content {
   padding: 32px 24px;
+}
+
+.landing-section {
+  padding: 80px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.landing-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.landing-subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  opacity: 0.95;
+  margin: 0;
+}
+
+.intro-content {
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.intro-content p {
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.intro-content p:last-child {
+  margin-bottom: 0;
 }
 
 .selected-value {
