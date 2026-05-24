@@ -343,17 +343,19 @@ Logical / Coding Questions, Sometimes a small coding round or machine test is gi
       clearActiveNav();
       button.classList.add('active-nav');
 
-      // Self Intro
-      if (button.textContent.trim() === 'Self intro') {
-        hideAllSections();
+    
+// Introduction
+if (button.textContent.trim() === 'Introduction') {
 
-        const selfIntroSection =
-          document.getElementById('self-intro');
+  hideAllSections();
 
-        if (selfIntroSection) {
-          selfIntroSection.style.display = 'block';
-        }
-      }
+  const selfIntroSection =
+    document.getElementById('self-intro');
+
+  if (selfIntroSection) {
+    selfIntroSection.style.display = 'block';
+  }
+}
 
       // Project
       else if (button.textContent.trim() === 'Project') {
