@@ -11,9 +11,28 @@
     <header class="navbar">
       <!-- <div class="brand">Interview Prep</div> -->
       <nav class="nav-links">
-        <button type="button" class="btn btn-outline-primary rounded-pill px-4">Self intro</button>
-        <button type="button" class="btn btn-outline-secondary rounded-pill px-4">Project</button>
-        <button id="tipsButton" type="button" class="btn btn-outline-success rounded-pill px-4">Tips</button>
+        <button type="button" class="btn btn-outline-primary rounded-pill px-4">Introduction</button>
+    
+        <!-- <button id="tipsButton" type="button" class="btn btn-outline-success rounded-pill px-4">Web</button> -->
+
+
+<div class="dropdown">
+  <button
+    type="button"
+    class="btn btn-outline-success rounded-pill px-4 dropbtn"
+  >
+    Web
+  </button>
+
+  <div class="dropdown-content">
+    <a href="#" data-topic="Web" data-value="html">HTML</a>
+    <a href="#" data-topic="Web" data-value="css">CSS</a>
+    <a href="#" data-topic="Web" data-value="bootstrap">Bootstrap</a>
+  </div>
+</div>
+
+
+
         <div class="dropdown">
           <button type="button" class="btn btn-outline-warning rounded-pill px-4 dropbtn">JavaScript</button>
           <div class="dropdown-content">
@@ -30,7 +49,23 @@
             <a href="#" data-topic="Angular" data-value="tutorials">Dotnet</a>
           </div>
         </div>
-        <button type="button" class="btn btn-outline-info rounded-pill px-4">Mock Interview</button>
+        <button type="button" class="btn btn-outline-info rounded-pill px-4">DotNet</button>
+
+
+            <!-- <button type="button" class="btn btn-outline-secondary rounded-pill px-4">Others</button> -->
+
+            <div class="dropdown">
+  <button type="button" class="btn btn-outline-secondary rounded-pill px-4 dropbtn">
+    Others
+  </button>
+
+  <div class="dropdown-content">
+    <a href="#" data-topic="Others" data-value="tips">Tips</a>
+    <a href="#" data-topic="Others" data-value="youtube">Youtube Links</a>
+    <a href="#" data-topic="Others" data-value="github">Github</a>
+    <a href="#" data-topic="Others" data-value="resumes">Resumes</a>
+  </div>
+</div>
       </nav>
     </header>
 
@@ -44,15 +79,17 @@
       </div> -->
       <!-- Self Intro Content -->
       <div id="self-intro" class="content-section" style="display: none;">
-        <h2>About Me</h2>
+        <h2>Self Introduction</h2>
         <div class="intro-content">
           <p>Good morning sir/madam.</p>
-          <p>My name is Srinath Dasari. I have 2 years of experience as a Software Developer, mainly working with Angular and JavaScript.</p>
-          <p>Currently, I am working at Kapil IT Solutions, where I develop responsive web applications and work on API integration using Angular, TypeScript, HTML, CSS, and RxJS.</p>
-          <p>I also have basic experience in ASP.NET Core Web API, CRUD operations, and SQL queries.</p>
-          <p>I worked on a project called EasyChit, where I was involved in frontend development, bug fixing, and API integration.</p>
-          <p>I am currently looking for an opportunity to improve my full-stack development skills and grow technically.</p>
+          <p>My self Srinath. I am currently working as a Web Developer at Kapil IT Solutions with 2 years of experience.</p>
+          <p>I have hands on experience in Javascript and Angular framework.</p>
+           <p>Using these Technologies,and recent project i worked on is "TaazaPanta"</p>
           <p>Thank you.</p>
+
+        <h2>Project Explanation</h2>
+        <p>The "TaazaPanta" project is a web application developed using Angular and JavaScript. It focuses on providing a user-friendly interface for managing and displaying content in a dynamic manner.</p>
+
         </div>
       </div>
       <!-- Tips Content -->
@@ -263,91 +300,159 @@ Logical / Coding Questions, Sometimes a small coding round or machine test is gi
     </main>
 
     <script>
-      const dropdownLinks = document.querySelectorAll('.dropdown-content a');
-      const tipsButton = document.getElementById('tipsButton');
-      const navButtons = document.querySelectorAll('.nav-links button');
+  const dropdownLinks = document.querySelectorAll('.dropdown-content a');
+  const tipsButton = document.getElementById('tipsButton');
+  const navButtons = document.querySelectorAll('.nav-links button');
 
-      function hideAllSections() {
-        const allSections = document.querySelectorAll('.content-section');
-        const landingPage = document.getElementById('landing-page');
-        allSections.forEach(section => section.style.display = 'none');
-        if (landingPage) {
-          landingPage.style.display = 'none';
-        }
-      }
+  function hideAllSections() {
+    const allSections = document.querySelectorAll('.content-section');
+    const landingPage = document.getElementById('landing-page');
 
-      function showLanding() {
+    allSections.forEach(section => {
+      section.style.display = 'none';
+    });
+
+    if (landingPage) {
+      landingPage.style.display = 'none';
+    }
+  }
+
+  function showLanding() {
+    hideAllSections();
+
+    const landingPage = document.getElementById('landing-page');
+
+    if (landingPage) {
+      landingPage.style.display = 'block';
+    }
+  }
+
+  function clearActiveNav() {
+    navButtons.forEach(button => {
+      button.classList.remove('active-nav');
+    });
+
+    dropdownLinks.forEach(link => {
+      link.classList.remove('active');
+    });
+  }
+
+  // Navbar button click
+  navButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      clearActiveNav();
+      button.classList.add('active-nav');
+
+      // Self Intro
+      if (button.textContent.trim() === 'Self intro') {
         hideAllSections();
-        const landingPage = document.getElementById('landing-page');
-        if (landingPage) {
-          landingPage.style.display = 'block';
+
+        const selfIntroSection =
+          document.getElementById('self-intro');
+
+        if (selfIntroSection) {
+          selfIntroSection.style.display = 'block';
         }
       }
 
-      function clearActiveNav() {
-        navButtons.forEach(button => button.classList.remove('active-nav'));
-        dropdownLinks.forEach(link => link.classList.remove('active'));
+      // Project
+      else if (button.textContent.trim() === 'Project') {
+
+  hideAllSections();
+
+  const selfIntroSection =
+    document.getElementById('self-intro');
+
+  if (selfIntroSection) {
+    selfIntroSection.style.display = 'block';
+  }
+}
+
+
+
+    });
+  });
+
+  // Dropdown links
+  dropdownLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      const topic = link.getAttribute('data-topic');
+      const value = link.getAttribute('data-value');
+
+      let sectionId = '';
+
+      // JavaScript
+      if (topic === 'JavaScript') {
+        sectionId = `js-${value}`;
       }
 
-      navButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-          clearActiveNav();
-          button.classList.add('active-nav');
-          
-          // Handle Self intro button
-          if (button.textContent.trim() === 'Self intro') {
-            hideAllSections();
-            const selfIntroSection = document.getElementById('self-intro');
-            if (selfIntroSection) {
-              selfIntroSection.style.display = 'block';
-            }
-          }
-          // Handle Project button
-          else if (button.textContent.trim() === 'Project') {
-            hideAllSections();
-            // Add project content display logic here if needed
-          }
-        });
-      });
-
-      dropdownLinks.forEach((link) => {
-        link.addEventListener('click', (event) => {
-          event.preventDefault();
-          const topic = link.getAttribute('data-topic');
-          const value = link.getAttribute('data-value');
-          
-          let prefix;
-          if (topic === 'JavaScript') {
-            prefix = 'js';
-          } else if (topic === 'Angular') {
-            prefix = 'ng';
-          }
-          
-          hideAllSections();
-          const sectionId = `${prefix}-${value}`;
-          const selectedSection = document.getElementById(sectionId);
-          if (selectedSection) {
-            selectedSection.style.display = 'block';
-          }
-
-          clearActiveNav();
-          const parentButton = link.closest('.dropdown')?.querySelector('.dropbtn');
-          if (parentButton) {
-            parentButton.classList.add('active-nav');
-          }
-          link.classList.add('active');
-        });
-      });
-
-      if (tipsButton) {
-        tipsButton.addEventListener('click', () => {
-          hideAllSections();
-          const tipsSection = document.getElementById('tips-content');
-          if (tipsSection) {
-            tipsSection.style.display = 'block';
-          }
-        });
+      // Angular
+      else if (topic === 'Angular') {
+        sectionId = `ng-${value}`;
       }
-    </script>
+
+      // Others
+      else if (topic === 'Others') {
+
+        if (value === 'tips') {
+          sectionId = 'tips-content';
+        }
+
+        else if (value === 'youtube') {
+          sectionId = 'tips-content';
+        }
+
+        else if (value === 'github') {
+          sectionId = 'tips-content';
+        }
+
+        else if (value === 'resumes') {
+          sectionId = 'tips-content';
+        }
+      }
+
+      hideAllSections();
+
+      const selectedSection =
+        document.getElementById(sectionId);
+
+      if (selectedSection) {
+        selectedSection.style.display = 'block';
+      }
+
+      clearActiveNav();
+
+      const parentButton = link
+        .closest('.dropdown')
+        ?.querySelector('.dropbtn');
+
+      if (parentButton) {
+        parentButton.classList.add('active-nav');
+      }
+
+      link.classList.add('active');
+    });
+  });
+
+  // Web button
+  if (tipsButton) {
+    tipsButton.addEventListener('click', () => {
+
+      hideAllSections();
+
+      const tipsSection =
+        document.getElementById('tips-content');
+
+      if (tipsSection) {
+        tipsSection.style.display = 'block';
+      }
+
+      clearActiveNav();
+      tipsButton.classList.add('active-nav');
+    });
+  }
+</script>
   </body>
 </html>
