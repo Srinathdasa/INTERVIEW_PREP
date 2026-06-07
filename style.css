@@ -320,3 +320,23 @@ pre {
   font-weight: 600;
   margin-bottom: 10px;
 }
+
+.job-links {
+  margin-top: 20px;
+}
+
+.job-card {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #0a66c2;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.job-card:hover {
+  background-color: #004182;
+  color: white;
+}

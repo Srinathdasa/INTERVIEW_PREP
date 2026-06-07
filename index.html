@@ -60,10 +60,13 @@
   </button>
 
   <div class="dropdown-content">
+    <a href="#" data-topic="Others" data-value="Recruit_call">Recruit call Q/A's </a>
     <a href="#" data-topic="Others" data-value="tips">Tips</a>
-    <a href="#" data-topic="Others" data-value="youtube">Youtube Links</a>
+    <a href="#" data-topic="Others" data-value="youtube">Important Links</a> <!-- https://youtu.be/Co38emZRK28?si=GvGWoHRGFG5G5izK -->
     <a href="#" data-topic="Others" data-value="github">Github</a>
     <a href="#" data-topic="Others" data-value="resumes">Resumes</a>
+    <a href="#" data-topic="Others" data-value="jobflatforms">JobFlatforms</a>
+    <a href="#" data-topic="Others" data-value="youtubers">Youtubers</a>
   </div>
 </div>
       </nav>
@@ -117,6 +120,26 @@
         <p>Follow me Chetan Jogi for more such posts</p>
         <p>#angular #angularInterview #reactjsinterview #jobsearch #angularjobs #reactjobs #interviewPreparation</p>
       </div>
+
+      <!-- Recruit Call Q/A's -->
+      <div id="Recruit_call" class="content-section" style="display: none;">
+      <p>Q) What is your Notice period?</p>
+      <p>A) My notice period is 30 days. </p>
+      <p> or Actually iam having 2months notice period but we have some negotiation option</p> 
+      <p>so if i will go with that then only one month we have serve </p>
+
+
+      <p>Q) What is your Current CTC(per Year)?</p>
+      <p>A) My current CTC is 2.4LPA</p>
+
+      <p>Q) What is your Expected CTC?</p>
+      <p>A) My expected CTC is 6LPA.</p> 
+
+       <p>Q) Why are you looking for a new job?</p>       
+       <p>A) I am looking for new opportunities to grow my skills and take on new challenges. I want to work in an environment that fosters learning and development, and I believe this company can provide that.</p>
+
+      </div>
+
       <!-- JavaScript Questions -->
       <div id="js-questions" class="content-section" style="display: none;">
         <h2>JavaScript Interview Questions for 2 Years Experience – Asked in Infosys</h2>
@@ -187,24 +210,14 @@
       <h4>Code</h4>
 
 <pre>
-function fibonacciSeries(n) {
-  let first = 0;
-  let second = 1;
-
-  console.log(first);
-  console.log(second);
-
-  for (let i = 2; i < n; i++) {
-    let next = first + second;
-
-    console.log(next);
-
-    first = second;
-    second = next;
-  }
-}
-
-fibonacciSeries(10);
+let n1 =0, n2 =1; 
+for(let index= 0 ;index <10;index++) {
+    let temp  =0;
+    console.log(n1); 
+    temp  = n1+ n2;
+    n1 = n2;
+    n2 = temp
+} 
 </pre>
 
     </div>
@@ -212,19 +225,9 @@ fibonacciSeries(10);
     <!-- Output Section -->
     <div class="output-box">
       <h4>Output</h4>
+      <pre>
 
-<pre>
-0
-1
-1
-2
-3
-5
-8
-13
-21
-34
-</pre>
+      </pre>
 
     </div>
 
@@ -234,21 +237,67 @@ fibonacciSeries(10);
           <li>Create an object which will store an ecommerce product with a nested object and an array of objects</li>
         </ol>
         
+<br><br>
 
 
-        
         <h2>0–3 years of experience</h2>
         <h2>You should also be comfortable with small coding snippets related to hoisting, closures, setTimeout, promises, and async behavior.
 Logical / Coding Questions, Sometimes a small coding round or machine test is given.</h2>
         <ol>
           <li>Print Fibonacci series</li>
           <li>Factorial of a number</li>
-          <li>Remove duplicates from an array</li>
+
+
+          <p class="question-title">3.Remove duplicates from an array</p>
+          <!-- <li>Remove duplicates from an array</li> -->
+  <div class="code-output-container">
+
+    <!-- Code Section -->
+    <div class="code-box">
+      <h4>using filter</h4>
+<!-- <h6>using filter</h6> -->
+<pre>
+const arr = [1, 2, 3, 2, 4, 1];
+const newArr = arr.filter((item,index) => arr.indexOf(item) === index);
+console.log(newArr)
+  </pre>
+    </div>
+
+
+    <!-- Code Section -->
+    <div class="code-box">
+      <h4>using Set</h4>
+<!-- <h6>using filter</h6> -->
+<pre>
+const arr = [1, 2, 3, 2, 4, 1];
+const unique = [...new Set(arr)];
+console.log(unique);
+  </pre>
+    </div>
+
+
+  </div>
+    <!-- Output Section -->
+    <!-- <div class="output-box">
+      <h4>Output</h4>
+      <pre>
+
+      </pre>
+
+    </div> -->
+
+
           <li>Find the missing number in an array </li>
           <li>Reverse string without using built in Methods</li>
       
         </ol>
-      </div>
+     
+
+<br><br>
+       <h2>Remaining Code snippets</h2>
+
+ </div>
+
 
       <!-- JavaScript Resources -->
       <div id="js-resources" class="content-section" style="display: none;">
@@ -331,9 +380,43 @@ Logical / Coding Questions, Sometimes a small coding round or machine test is gi
 
 
 
+<!-- Job Platforms Content -->
+<div id="jobflatforms-content" class="content-section" style="display: none;">
+  <h2>Job Platforms</h2>
+
+  <div class="job-links">
+    <a 
+      href="https://www.linkedin.com/feed/" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="job-card"
+    >
+      Linked in Portal
+    </a>
 
 
-      
+    <a 
+      href="https://in.indeed.com/jobs?q=angular+developer&l=hyderabad%2C+telangana&radius=25&from=searchOnDesktopSerp&vjk=6ff2a70b2d8c64ca" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="job-card"
+    >
+      Indeed
+    </a>
+
+  </div>
+</div>
+
+  <!-- youtubers Content -->
+<div id="youtubers-content" class="content-section" style="display: none;">    
+  <h2>Youtubers</h2> 
+
+     <p>#codewithindu</p>
+     
+</div >
+
+
+
 
     </main>
 
@@ -436,12 +519,17 @@ if (button.textContent.trim() === 'Introduction') {
       // Others
       else if (topic === 'Others') {
 
+ if (value === 'Recruit_call') {
+          sectionId = 'Recruit_call';
+        }
+
+
         if (value === 'tips') {
           sectionId = 'tips-content';
         }
 
         else if (value === 'youtube') {
-          sectionId = 'tips-content';
+          sectionId = 'youtube-content';
         }
 
         else if (value === 'github') {
@@ -451,6 +539,15 @@ if (button.textContent.trim() === 'Introduction') {
         else if (value === 'resumes') {
           sectionId = 'tips-content';
         }
+
+        else if (value === 'jobflatforms') {
+          sectionId = 'jobflatforms-content';
+        }
+
+        else if (value === 'youtubers') {
+          sectionId = 'youtubers-content';
+        }
+
       }
 
       hideAllSections();
