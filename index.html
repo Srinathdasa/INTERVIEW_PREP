@@ -62,11 +62,11 @@
   <div class="dropdown-content">
     <a href="#" data-topic="Others" data-value="Recruit_call">Recruit call Q/A's </a>
     <a href="#" data-topic="Others" data-value="tips">Tips</a>
-    <a href="#" data-topic="Others" data-value="youtube">Important Links</a> <!-- https://youtu.be/Co38emZRK28?si=GvGWoHRGFG5G5izK -->
+    <a href="#" data-topic="Others" data-value="importantlinks">Important Links</a> 
     <a href="#" data-topic="Others" data-value="github">Github</a>
     <a href="#" data-topic="Others" data-value="resumes">Resumes</a>
-    <a href="#" data-topic="Others" data-value="jobflatforms">JobFlatforms</a>
-    <a href="#" data-topic="Others" data-value="youtubers">Youtubers</a>
+    <a href="#" data-topic="Others" data-value="jobflatforms">Job Flatforms</a>
+    <a href="#" data-topic="Others" data-value="youtubers">Social media</a>
   </div>
 </div>
       </nav>
@@ -123,19 +123,19 @@
 
       <!-- Recruit Call Q/A's -->
       <div id="Recruit_call" class="content-section" style="display: none;">
-      <p>Q) What is your Notice period?</p>
+      <p class="text-primary">Q) What is your Notice period?</p>
       <p>A) My notice period is 30 days. </p>
       <p> or Actually iam having 2months notice period but we have some negotiation option</p> 
       <p>so if i will go with that then only one month we have serve </p>
 
 
-      <p>Q) What is your Current CTC(per Year)?</p>
-      <p>A) My current CTC is 2.4LPA</p>
+      <p class="text-primary">Q) What is your Current CTC(per Year)?</p>
+      <p >A) My current CTC is 2.4LPA</p>
 
-      <p>Q) What is your Expected CTC?</p>
+      <p class="text-primary">Q) What is your Expected CTC?</p>
       <p>A) My expected CTC is 6LPA.</p> 
 
-       <p>Q) Why are you looking for a new job?</p>       
+       <p class="text-primary">Q) Why are you looking for a new job?</p>       
        <p>A) I am looking for new opportunities to grow my skills and take on new challenges. I want to work in an environment that fosters learning and development, and I believe this company can provide that.</p>
 
       </div>
@@ -168,7 +168,7 @@
         </div>
 
         <p>11.<a href="https://youtu.be/xlzSh-r4J5w?si=pOvMNPG1Udk5TSeY"
-           target="_blank" rel="noopener noreferrer"> Angular & Jacascript Interview Question With Answers for 0-3 Years Experience(Youtube Link)</a></p>
+           target="_blank" rel="noopener noreferrer"> Angular & JavaScript Interview Question With Answers for 0-3 Years Experience(Youtube Link)</a></p>
 
           
            <div class="topic-section">
@@ -407,11 +407,32 @@ console.log(unique);
   </div>
 </div>
 
+
+
+ <!-- importantlinks Content -->
+<div id="importantlinks-content" class="content-section" style="display: none;">
+
+
+<p>1. <a href="https://youtu.be/Co38emZRK28?si=GvGWoHRGFG5G5izK"
+  target="_blank" rel="noopener noreferrer">Naukri Portal Optimization</a></p>
+
+
+<!-- https://youtu.be/Co38emZRK28?si=GvGWoHRGFG5G5izK -->
+
+  </div>
+
+
+
   <!-- youtubers Content -->
 <div id="youtubers-content" class="content-section" style="display: none;">    
   <h2>Youtubers</h2> 
 
-     <p>#codewithindu</p>
+     <p># codewithindu</p>
+
+
+     <h2>Instagram Guiders</h2> 
+
+     <p># jayanth_talks</p>
      
 </div >
 
@@ -528,8 +549,8 @@ if (button.textContent.trim() === 'Introduction') {
           sectionId = 'tips-content';
         }
 
-        else if (value === 'youtube') {
-          sectionId = 'youtube-content';
+        else if (value === 'importantlinks') {
+          sectionId = 'importantlinks-content';
         }
 
         else if (value === 'github') {
